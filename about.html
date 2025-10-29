@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Sri Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9a6b6b0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --dark-bg: #0b1622;
+      --light-bg: #0f1e33;
+      --glass: rgba(255,255,255,0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: linear-gradient(120deg, var(--dark-bg), var(--light-bg));
+      color: #fff;
+      overflow-x: hidden;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 70px;
+      background: rgba(0, 0, 50, 0.4);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo { font-size: 1.8rem; color: var(--primary); font-weight: bold; }
+    nav ul { display: flex; list-style: none; }
+    nav li { margin: 0 15px; }
+    nav a { text-decoration: none; color: white; transition: 0.3s; }
+    nav a:hover, nav a.active { color: var(--primary); }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 100px 80px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(30,144,255,0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero-text {
+      max-width: 600px;
+      animation: fadeInRight 1.5s ease;
+    }
+
+    .hero-text h1 { font-size: 2.5rem; color: #fff; }
+    .hero-text h1 span { color: var(--primary); }
+    .hero-text h2 { color: #b0d4ff; font-size: 1.5rem; margin: 10px 0 20px; }
+    .hero-text p { color: #d0e0f0; font-size: 1.1rem; margin-bottom: 25px; }
+
+    /* 🔹 Button + Social Icons */
+    .btn-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #1476d4;
+      transform: scale(1.05);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: var(--primary);
+      font-size: 1.5rem;
+      transition: 0.3s;
+      background: rgba(255,255,255,0.08);
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(30,144,255,0.3);
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+      background: var(--primary);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(30,144,255,0.6);
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ======================
+   💫 PRO ABOUT SECTION
+   ====================== */
+.about-text.pro {
+  position: relative;
+  text-align: center;
+  max-width: 850px;
+  margin: 80px auto;
+  padding: 50px 25px;
+  border-radius: 25px;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 60, 120, 0.3), rgba(0, 0, 0, 0.6));
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 35px rgba(30,144,255,0.25);
+  animation: floatIn 2s ease forwards;
+}
+
+/* 🔹 Floating Background Light */
+.about-text.pro::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,195,255,0.25), transparent 70%);
+  animation: moveLight 10s infinite alternate ease-in-out;
+  filter: blur(60px);
+}
+@keyframes moveLight {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(150px, 100px); }
+}
+
+/* =============================== */
+/* ⚡ ADVANCED ABOUT SECTION STYLING */
+/* =============================== */
+.about-pro {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 60px 40px;
+  border-radius: 25px;
+  text-align: center;
+  color: #e8faff;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.1), rgba(0,0,40,0.5));
+  box-shadow: 0 0 40px rgba(0,255,255,0.15);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title shimmer */
+.about-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00f0ff, #b9f7ff, #00f0ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTitle 5s linear infinite;
+}
+
+@keyframes shimmerTitle {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Base paragraph */
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #cdeaff;
+}
+
+/* Each word behavior */
+.word {
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+}
+
+/* Active word — every second this changes! */
+.word.active {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00ffff;
+  transform: scale(1.3) translateY(-3px) rotate(-2deg);
+}
+
+/* Add wave motion for background energy */
+.about-pro::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: conic-gradient(from 0deg, rgba(0,255,255,0.1), transparent, rgba(0,255,255,0.1));
+  animation: spinWave 10s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes spinWave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pulsing name */
+strong {
+  color: #00f6ff;
+  text-shadow: 0 0 15px #00f6ff;
+  animation: pulseName 2s infinite alternate;
+}
+
+@keyframes pulseName {
+  0% { text-shadow: 0 0 5px #00f6ff; }
+  100% { text-shadow: 0 0 25px #00f6ff; }
+}
+
+
+    /* Info Cards */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px 70px;
+      animation: fadeInGrid 2s ease-in-out;
+    }
+
+    @keyframes fadeInGrid {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .info-card {
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      width: 300px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+      animation: popIn 1.5s ease forwards;
+    }
+
+    .info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 35px rgba(30,144,255,0.3);
+    }
+
+    .info-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .info-card h3 { color: #fff; margin-bottom: 8px; }
+    .info-card p { color: #cce3ff; font-size: 0.95rem; }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* 🎓 Education Section */
+    .education {
+      margin: 60px auto;
+      text-align: center;
+      animation: fadeInSection 2s ease-in-out;
+    }
+
+    .education h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(30,144,255,0.6);
+    }
+
+    @keyframes fadeInSection {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      color: #b0d4ff;
+      margin-top: 60px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; padding: 60px 30px; text-align: center; }
+      .hero-text { animation: fadeInRight 1.2s ease; }
+      .btn-container { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">💙 Sri</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- HERO (keep your existing HTML structure) -->
+<section class="hero">
+  <div class="profile-pic">
+    <img src="https://i.ibb.co/qYX8nFbN/IMG-20251027-132420.jpg" alt="Profile Picture">
+  </div>
+
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Kanaksri</span></h1>
+    <h2 id="changing-text">💻A Passionate Front-End Developer & AI Explorer</h2>
+    <p class="animated-para">
+      I specialize in building user-friendly, responsive, and intelligent interfaces.  
+      With a mix of creativity and logic, I turn ideas into interactive digital experiences.
+    </p>
+
+    <div class="btn-container">
+      <a href="contact.html" class="btn"><i class="fas fa-envelope"></i> Contact Me</a>
+      <div class="social-icons">
+        <a href="https://github.com/MattaKanakasri" target="_blank" title="GitHub">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/kanakasrimatta/" target="_blank" title="LinkedIn">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Logo">
+        </a>
+        <a href="https://twitter.com" target="_blank" title="Twitter">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="Twitter Logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Safe, error-free title rotation (runs after DOM ready; no global vars) -->
+<script>
+(function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Titles to rotate
+    const titles = [
+      "💻 A Passionate Front-End Developer",
+      "🎨 A Creative Web Developer",
+      "🤖 An AI & ML Enthusiast",
+      "💡 An Innovative Coder",
+      "🚀 A Tech Explorer"
+    ];
+
+    const el = document.getElementById('changing-text');
+    if (!el) return; // safeguard
+
+    let i = 0; // local variable inside closure — no conflicts
+
+    function changeTitle() {
+      // restart CSS animation if present
+      el.classList.remove('fade-in-fast');
+      void el.offsetWidth;
+      el.textContent = titles[i];
+      el.classList.add('fade-in-fast');
+      i = (i + 1) % titles.length;
+    }
+
+    // start immediately and then every 1s
+    changeTitle();
+    setInterval(changeTitle, 1000);
+  });
+})();
+</script>
+
+<!-- Minimal styles needed for animation (keep your other styles) -->
+<style>
+  #changing-text {
+    color: #bdefff;
+    font-weight: 600;
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, #00eaff, #007bff, #00eaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+
+  .fade-in-fast {
+    animation: fadeInFast 0.45s ease-in-out;
+  }
+  @keyframes fadeInFast {
+    0% { opacity: 0; transform: translateY(6px) scale(0.97); }
+    50% { opacity: 1; transform: translateY(0) scale(1.02); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+
+</section>
+
+<style>
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0); /* black icons default */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Colors */
+.social-icons a:nth-child(2):hover img {
+  filter: brightness(0.1) saturate(100%); /* GitHub black */
+  transform: scale(1.15);
+}
+.social-icons a:nth-child(3):hover img {
+  filter: invert(33%) sepia(92%) saturate(7491%) hue-rotate(200deg) brightness(98%) contrast(101%); /* LinkedIn Blue */
+  transform: scale(1.15);
+}
+.social-icons a:nth-child(1):hover img {
+  filter: invert(41%) sepia(98%) saturate(2737%) hue-rotate(187deg) brightness(97%) contrast(97%); /* Twitter Blue */
+  transform: scale(1.15);
+}
+</style>
+
+  </section>
+<!-- About Section -->
+<section class="about-pro">
+  <h1 class="about-title">About Me</h1>
+  <p class="about-text" id="aboutText">
+    Hello! I'm <strong>Kanaksri</strong> — a passionate front-end developer and AI explorer,
+    currently pursuing my B.Tech in Computer Science at Gudlavalleru Engineering College.
+    I enjoy turning ideas into interactive and user-friendly web applications. 
+    My interests also include artificial intelligence, deep learning, and automation.
+  </p>
+</section>
+
+<script>
+  // Split each word into spans for animation
+  const aboutText = document.getElementById("aboutText");
+  const words = aboutText.innerHTML.split(" ");
+  aboutText.innerHTML = words
+    .map(
+      (word) =>
+        `<span class="word">${word}</span>`
+    )
+    .join(" ");
+
+  // Loop through each word to animate every second
+  let index = 0;
+  const allWords = document.querySelectorAll(".word");
+  setInterval(() => {
+    allWords.forEach((w) => w.classList.remove("active"));
+    allWords[index].classList.add("active");
+    index = (index + 1) % allWords.length;
+  }, 180);
+</script>
+
+<!-- 🎓 Education Section -->
+<section class="education" data-aos="fade-up" data-aos-duration="1000">
+  <h2>🎓 Education</h2>
+  <div class="info-grid">
+    <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-university"></i>
+      <h3>B.Tech in Computer Science 💻</h3>
+      <p class="animate-line" style="--delay:0.2s;">Gudlavalleru Engineering College (2022 - 2026)</p>
+      <p class="animate-line" style="--delay:0.4s;">Currently pursuing with a focus on Front-End Development, AI, and Automation 🤖.</p>
+    </div>
+
+    <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-school"></i>
+      <h3>Intermediate Education 📘</h3>
+      <p class="animate-line" style="--delay:0.2s;">Completed with distinction, focusing on Mathematics and Computer Science 🧮.</p>
+    </div>
+
+    <div class="info-card" data-aos="zoom-in" data-aos-delay="300">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Schooling - Nagarjuna High School 🏫</h3>
+      <p class="animate-line" style="--delay:0.2s;">Completed with distinction, building a strong base in academics and computer awareness 💡.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 💫 Paragraph Animation CSS -->
+<style>
+  /* Fade + Slide animation for paragraphs */
+  .animate-line {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlide 1.2s ease forwards;
+    animation-delay: var(--delay, 0.3s);
+  }
+
+  @keyframes fadeSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<!-- ✅ AOS Library (for zoom-in + fade-up) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+<!-- 🌟 Highlights -->
+<section data-aos="fade-up" data-aos-duration="1000">
+  <h2 style="text-align:center;color:var(--primary);">🌟 Personal Highlights</h2>
+  <div class="info-grid">
+    <div class="info-card" data-aos="flip-left" data-aos-delay="100">
+      <i class="fas fa-code"></i>
+      <h3>Front-End Dev 💻</h3>
+      <p>Specialized in building responsive interfaces using HTML, CSS, JS, and Tailwind ⚡.</p>
+    </div>
+    <div class="info-card" data-aos="flip-left" data-aos-delay="200">
+      <i class="fas fa-brain"></i>
+      <h3>AI & ML Learner 🧠</h3>
+      <p>Exploring AI tools and machine learning algorithms for smart applications 🤓.</p>
+    </div>
+    <div class="info-card" data-aos="flip-left" data-aos-delay="300">
+      <i class="fas fa-laptop-house"></i>
+      <h3>Workshops 🧑‍🏫</h3>
+      <p>Completed workshops in Cybersecurity, Data Analysis, AIML, and Django 💼.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  💙 Designed with passion by <b>Sri</b> | 2025 Portfolio
+</footer>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Sri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0b1622;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 70px;
+      background: rgba(0, 0, 50, 0.4);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      color: #1e90ff;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #1e90ff;
+    }
+
+    /* Section */
+    .project-section {
+      padding: 80px 70px;
+      background: linear-gradient(180deg, #0b1622, #08111b);
+    }
+
+    .project-section h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 70px;
+      background: linear-gradient(90deg, #1e90ff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #1e90ff; }
+      to { text-shadow: 0 0 25px #00d4ff; }
+    }
+
+    /* Project Cards */
+    .project {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      margin-bottom: 60px;
+      padding: 35px;
+      gap: 50px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(30, 144, 255, 0.5);
+    }
+
+    .project img {
+      width: 40%;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(30,144,255,0.4);
+      transition: 0.4s;
+    }
+
+    .project img:hover {
+      transform: scale(1.05);
+    }
+
+    .project-info {
+      width: 55%;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .project-info h3 {
+      font-size: 1.8rem;
+      color: #1e90ff;
+      margin-bottom: 12px;
+    }
+
+    .project-info p {
+      color: #b0d4ff;
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .tech-tags span {
+      background: rgba(30,144,255,0.2);
+      color: #1e90ff;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      margin: 4px;
+      display: inline-block;
+    }
+
+    .btn-group a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      margin: 5px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-group a:hover {
+      box-shadow: 0 0 15px #1e90ff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #b0d4ff;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    @media (max-width: 768px) {
+      .project {
+        flex-direction: column;
+        text-align: center;
+      }
+      .project img, .project-info {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">💙 Sri</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-section">
+    <h2>🚀 My Featured Projects</h2>
+<!-- Titanic -->
+<div class="project">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/RMS_Titanic_3.jpg" alt="Titanic Survival Predictor">
+  <div class="project-info">
+    <h3>🚢 Titanic Survival Prediction System</h3>
+    <p>AI-powered app predicting passenger survival probabilities using machine learning models and interactive UI.</p>
+    <div class="tech-tags">
+      <span>Python</span><span>Streamlit</span><span>Machine Learning</span>
+    </div>
+    <div class="btn-group">
+      <a href="https://titanic-survival-prediction-3yr2tswgwpdewyc3ipa6wm.streamlit.app/" target="_blank">🌐 View</a>
+      <a href="https://github.com/MattaKanakasri/titanic-survival-prediction" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- Cyclone -->
+<div class="project">
+  <img src="https://img.youtube.com/vi/xHRbnuB9F1I/maxresdefault.jpg" alt="Cyclone Project">
+  <div class="project-info">
+    <h3>🌪️ Cyclone Prediction & Precaution</h3>
+    <p>AI-powered system forecasting cyclone patterns with real-time weather alerts and precaution recommendations.</p>
+    <div class="tech-tags">
+      <span>Deep Learning</span><span>OpenWeather API</span><span>Python</span>
+    </div>
+    <div class="btn-group">
+      <a href="https://pink-johanna-37.tiiny.site/" target="_blank">🌐 View</a>
+      <a href="https://github.com/MattaKanakasri/cyclone-predictions-and-precautions" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- Poultry -->
+<div class="project">
+  <img src="https://img1.wsimg.com/isteam/ip/04433131-cbb7-4d56-8eab-043900564722/0c8db8e6-4646-46f1-b23a-1b2ba28470bd.jpg" alt="Poultry Detection">
+  <div class="project-info">
+    <h3>🐔 Poultry Disease Detection System</h3>
+    <p>AI model identifying poultry diseases through image classification, improving farm health and yield.</p>
+    <div class="tech-tags">
+      <span>TensorFlow</span><span>AI/ML</span><span>Python</span>
+    </div>
+    <div class="btn-group">
+      <a href="#" target="_blank">🌐 View</a>
+      <a href="https://github.com/MattaKanakasri/poultary-project" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+
+<!-- Blood Donation System -->
+<div class="project">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuGSRcg_M9paYYWyd0xcWMGmynQ0S4dwJGag&s.png" alt="Blood Donation System">
+  <div class="project-info">
+    <h3>🩸 Blood Donation Management System</h3>
+    <p>A smart web platform connecting blood donors and recipients efficiently — featuring real-time donor availability, requests tracking, and automated eligibility checks.</p>
+    <div class="tech-tags">
+      <span>Flask</span><span>MySQL</span><span>HTML/CSS</span><span>AI Matching</span>
+    </div>
+    <div class="btn-group">
+      <a href="https://radhakrishnamatta.github.io/projec/" target="_blank">🌐 View</a>
+      <a href="https://github.com/MattaKanakasri/BloodDonate" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Plant -->
+<div class="project">
+  <img src="https://t3.ftcdn.net/jpg/04/30/12/06/360_F_430120686_Q3fE4XjtFPcDkjL3njo8NqAOV3a6Tjbj.jpg" alt="Plant Growth Prediction">
+  <div class="project-info">
+    <h3>🌿 Plant Growth Prediction System</h3>
+    <p>Deep learning model predicting plant growth patterns using environmental and soil data for precision farming.</p>
+    <div class="tech-tags">
+      <span>Deep Learning</span><span>Python</span><span>Matplotlib</span>
+    </div>
+    <div class="btn-group">
+      <a href="https://mattakanakasri.github.io/plantgrowthpred/" target="_blank">🌐 View</a>
+      <a href="https://github.com/MattaKanakasri/polutry-disease" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+</div>
+</section> <footer>💙 Projects by Sri</footer> </body> </html>

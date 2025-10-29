@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies | Sri Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* === Main Hobby Section === */
+    .hobby-section {
+    text-align: center;
+    padding: 100px 70px;
+    animation: fadeInUp 1.2s ease;
+  }
+
+  .hobby-section h2 {
+    color: #1e90ff;
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 12px rgba(30,144,255,0.6);
+    animation: glowText 2s ease-in-out infinite alternate;
+  }
+
+  .hobby-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 50px; /* 🟦 Added space between each row */
+  }
+    .hobby-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      transition: 0.4s ease;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 35px rgba(30,144,255,0.3);
+    }
+
+    .hobby-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    .hobby-card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .hobby-card p {
+      color: #cce3ff;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* === Animated 3-line Section === */
+    .fun-section {
+      margin-top: 100px;
+      text-align: center;
+      color: #fff;
+      min-height: 100px;
+    }
+
+    .fun-line {
+      font-size: 1.3rem;
+      opacity: 0;
+      animation: showLine 9s infinite;
+    }
+
+    .fun-line span {
+      font-size: 2rem;
+      display: block;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .fun-line:nth-child(1) { animation-delay: 0s; }
+    .fun-line:nth-child(2) { animation-delay: 3s; }
+    .fun-line:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes showLine {
+      0%, 10% { opacity: 1; transform: translateY(0); }
+      20%, 100% { opacity: 0; transform: translateY(-15px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 6px #1e90ff, 0 0 15px #1e90ff; }
+      to { text-shadow: 0 0 18px #1e90ff, 0 0 35px #1e90ff; }
+    }
+
+    @media (max-width: 768px) {
+      .hobby-section { padding: 60px 30px; }
+      .hobby-grid { flex-direction: column; align-items: center; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      color: #b0d4ff;
+      background: rgba(255,255,255,0.05);
+      margin-top: 50px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">💙 Sri</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hobbies.html" class="active">Hobbies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hobby-section">
+    <h2>My Hobbies & Interests</h2>
+
+        <div class="hobby-grid">
+      <!-- Row 1 -->
+      <div class="hobby-card">
+        <div class="hobby-icon">🎨</div>
+        <h3>UI/UX Designing</h3>
+        <p>Designing clean and modern interfaces that blend creativity with usability.</p>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-icon">🎬</div>
+        <h3>Video Editing</h3>
+        <p>Crafting cinematic edits and visual stories that spark imagination.</p>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-icon">🤖</div>
+        <h3>AI Tool Organizing</h3>
+        <p>Exploring and managing AI tools to enhance creativity and automation.</p>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="hobby-grid">
+      <div class="hobby-card">
+        <div class="hobby-icon">🎵</div>
+        <h3>Listening to Music</h3>
+        <p>Enjoying soulful melodies that boost focus and creativity.</p>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-icon">📚</div>
+        <h3>Handcraft Ideass</h3>
+        <p>Designing creative handmade crafts that blend art, color, and imagination beautifully 🎨💖.</p>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-icon">🌏</div>
+        <h3>Travelling & Photography</h3>
+        <p>Capturing the beauty of nature and cultures through my lens.</p>
+      </div>
+    </div>
+
+    <!-- ✨ Animated one-by-one emoji lines -->
+    <div class="fun-section">
+      <div class="fun-line"><span>🌸</span> Creativity gives me wings</div>
+      <div class="fun-line"><span>🎨</span> Every design tells a story</div>
+      <div class="fun-line"><span>💫</span> Keep exploring, keep shining</div>
+    </div>
+  </section>
+
+  <footer>💙 Designed with passion by Sri | 2025 Portfolio</footer>
+</body>
+</html>

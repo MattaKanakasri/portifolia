@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Sri Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> <!-- Excel Library -->
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top left, #001F3F, #000814);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+    .orb1 { width: 250px; height: 250px; background: #007bff; top: 10%; left: 10%; animation-delay: 0s; }
+    .orb2 { width: 300px; height: 300px; background: #00d4ff; bottom: 10%; right: 10%; animation-delay: 2s; }
+
+    @keyframes float { 0% { transform: translateY(0); } 100% { transform: translateY(40px); } }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 70px;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 10;
+      position: relative;
+    }
+
+    .logo { font-size: 1.8rem; font-weight: 600; color: #00bfff; text-shadow: 0 0 10px rgba(0,191,255,0.8); animation: fadeIn 1.2s ease; }
+
+    nav ul { list-style: none; display: flex; gap: 30px; }
+
+    nav a { color: #cce3ff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #00bfff; text-shadow: 0 0 8px #00bfff; }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      padding: 100px 50px;
+      gap: 50px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .contact-card, .contact-form {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.15);
+      transition: 0.4s;
+      flex: 1;
+      min-width: 320px;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .contact-card:hover, .contact-form:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 40px rgba(0,191,255,0.3);
+    }
+
+    .contact-card h2 { font-size: 2rem; color: #00bfff; margin-bottom: 25px; text-align: center; }
+
+    .info p { margin: 15px 0; font-size: 1rem; color: #e2f0ff; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+    .info p:hover { color: #00d4ff; transform: translateX(5px); }
+
+    .social { text-align: center; margin-top: 25px; }
+    .social a { color: #00bfff; font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+    .social a:hover { color: #fff; text-shadow: 0 0 15px #00d4ff; transform: scale(1.2); }
+
+    .contact-form h2 { text-align: center; color: #00bfff; margin-bottom: 25px; }
+
+    input, textarea {
+      width: 100%; padding: 14px; margin-bottom: 20px; border: none; border-radius: 8px;
+      background: rgba(255,255,255,0.1); color: #fff; outline: none; font-size: 1rem; transition: 0.3s;
+    }
+    input:focus, textarea:focus {
+      background: rgba(0,191,255,0.15); box-shadow: 0 0 10px rgba(0,191,255,0.4);
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #007bff, #00d4ff);
+      border: none; color: white; padding: 14px; font-size: 1rem;
+      border-radius: 10px; cursor: pointer; font-weight: 500; transition: 0.4s; width: 100%;
+    }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,191,255,0.6); }
+
+    footer {
+      text-align: center; padding: 25px; color: #b0d4ff;
+      background: rgba(255,255,255,0.04); z-index: 2; position: relative;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      header { padding: 20px 30px; }
+      .contact-container { flex-direction: column; padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+
+  <header>
+    <header>
+  <div class="logo-container">
+    <div class="logo">💙 Sri</div>
+    <div class="butterfly">🦋</div>
+  </div>
+</header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-container">
+    <div class="contact-card" data-aos="fade-up">
+      <h2>Let's Connect 🚀</h2>
+      <div class="info">
+        <p><i class="fas fa-envelope"></i> <b>Email:</b>kanakasrimatta@gmail.com</p>
+        <p><i class="fas fa-phone"></i> <b>Phone:</b> +919347767644</p>
+        <p><i class="fas fa-map-marker-alt"></i> <b>Location:</b> Machilipatnam, Andhra Pradesh</p>
+      </div>
+      <div class="social">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+      <h2>Send a Message 💌</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="button" class="btn" onclick="downloadExcel()">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>💙 Designed with Passion by Sri | 2025 Portfolio</footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function downloadExcel() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if (!name || !email || !message) {
+        alert("Please fill all fields before sending.");
+        return;
+      }
+
+      const data = [
+        ["Name", "Email", "Message"],
+        [name, email, message]
+      ];
+
+      const worksheet = XLSX.utils.aoa_to_sheet(data);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Messages");
+
+      const today = new Date().toISOString().split("T")[0];
+      XLSX.writeFile(workbook, `SriMessages_${today}.xlsx`);
+
+      alert("Message saved successfully 💾. Check your downloads!");
+      document.getElementById("contactForm").reset();
+    }
+  </script>
+</body>
+</html>
